@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laiba Zaheer — SQA & API Testing</title>
+<meta name="description" content="Laiba Zaheer — SQA & API Testing portfolio. Self-taught Postman test automation, SQL data validation, and manual testing fundamentals. Open to SQA & API Testing roles in Karachi.">
+<meta property="og:title" content="Laiba Zaheer — SQA & API Testing">
+<meta property="og:description" content="Real Postman test scripts, SQL data validation, and QA fundamentals — self-taught, verified, and ready to contribute.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23101820'/%3E%3Ctext x='50' y='68' font-size='52' font-family='monospace' font-weight='700' fill='%23E8A94A' text-anchor='middle'%3ELZ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101820; --ink-2:#182430; --ink-3:#1F2E3B;
+    --paper:#F3EFE4; --paper-dim:#B7B2A2;
+    --amber:#E8A94A; --amber-dim:#8A6A34;
+    --teal:#4C9A8E; --coral:#D9694F;
+    --line: rgba(243,239,228,0.12);
+    --sidebar-w: 230px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
+
+  /* ---- Sidebar ---- */
+  .sidebar{
+    position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;
+    background:var(--ink-2);border-right:1px solid var(--line);
+    display:flex;flex-direction:column;padding:32px 24px;z-index:100;
+  }
+  .sb-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--paper);}
+  .sb-role{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);margin-top:4px;letter-spacing:0.02em;}
+  .sb-status{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);
+    border:1px solid rgba(76,154,142,0.4);background:rgba(76,154,142,0.08);
+    padding:4px 9px;border-radius:3px;width:fit-content;
+  }
+  .sb-status .dot{width:5px;height:5px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal);}
+  .sb-links{list-style:none;margin-top:40px;flex:1;}
+  .sb-links li{margin-bottom:4px;}
+  .sb-links a{
+    display:block;padding:9px 12px;border-radius:6px;
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;
+    color:var(--paper-dim);text-decoration:none;
+    border-left:2px solid transparent;
+    transition:all 0.2s ease;
+  }
+  .sb-links a:hover{color:var(--paper);background:rgba(255,255,255,0.03);}
+  .sb-links a.active{color:var(--amber);border-left-color:var(--amber);background:rgba(232,169,74,0.06);}
+  .sb-foot{margin-top:auto;}
+  .sb-cta{
+    display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;
+    background:var(--amber);color:var(--ink);padding:10px;border-radius:6px;
+    text-decoration:none;font-weight:600;margin-bottom:10px;
+    transition:all 0.2s ease;
+  }
+  .sb-cta:hover{filter:brightness(1.1);}
+  .sb-cta-outline{background:transparent;color:var(--amber);border:1px solid rgba(232,169,74,0.4);}
+  .sb-cta-outline:hover{background:rgba(232,169,74,0.08);}
+  .sb-links2{display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;}
+  .sb-links2 a{color:var(--paper-dim);text-decoration:none;}
+  .sb-links2 a:hover{color:var(--amber);}
+
+  /* ---- Main content ---- */
+  .content{margin-left:var(--sidebar-w);padding-bottom:40px;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 40px;}
+
+  header{padding:72px 0 40px;}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;line-height:1.05;letter-spacing:-0.02em;margin-bottom:10px;}
+  .tagline{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--paper-dim);}
+  .tagline span{color:var(--amber);}
+
+  section{padding:56px 0;border-top:1px solid var(--line);}
+  section[id], header[id]{min-height:38vh;display:flex;flex-direction:column;justify-content:center;}
+  header[id]{min-height:32vh;}
+  footer[id]{min-height:60vh;display:flex;flex-direction:column;justify-content:center;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
+  h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:6px;}
+  p.lead{color:var(--paper-dim);font-size:14.5px;max-width:600px;}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--paper);background:var(--ink-2);border:1px solid var(--line);padding:6px 12px;border-radius:20px;}
+  .chip.accent{border-color:rgba(232,169,74,0.4);color:var(--amber);}
+
+  .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px;}
+  .proof-card{background:var(--ink-2);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .proof-head{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--ink-3);border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--teal);text-transform:uppercase;letter-spacing:0.05em;}
+  .proof-head .badge{color:var(--paper-dim);font-size:10px;text-transform:none;margin-left:auto;}
+  .status-pill{
+    margin-left:auto;font-size:9px;letter-spacing:0.04em;
+    background:rgba(76,154,142,0.15);color:var(--teal);
+    padding:2px 7px;border-radius:10px;border:1px solid rgba(76,154,142,0.35);
+  }
+  .proof-code{padding:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--paper-dim);white-space:pre;overflow-x:auto;line-height:1.6;}
+  .proof-code .kw{color:var(--amber);}
+  .proof-code .str{color:var(--teal);}
+  .proof-code .fn{color:#9FB4D9;}
+
+  .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;}
+  .stat{background:var(--ink-2);border:1px solid var(--line);border-radius:8px;padding:16px 10px;text-align:center;}
+  .stat .num{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--amber);}
+  .stat .label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--paper-dim);text-transform:uppercase;letter-spacing:0.03em;margin-top:4px;}
+
+
+
+  .sheet-cta{
+    margin-top:18px;display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;
+    background:var(--amber);border:1px solid var(--amber);
+    padding:11px 18px;border-radius:6px;color:var(--ink);text-decoration:none;font-weight:600;
+    transition:all 0.2s ease;
+  }
+  .sheet-cta:hover{background:transparent;color:var(--amber);}
+
+  .preview-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:18px;background:var(--ink-2);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .preview-table thead th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber-dim);text-transform:uppercase;letter-spacing:0.05em;padding:10px 12px;background:var(--ink-3);border-bottom:1px solid var(--line);}
+  .preview-table tbody td{padding:9px 12px;color:var(--paper-dim);border-bottom:1px solid var(--line);}
+  .preview-table tbody tr:last-child td{border-bottom:none;}
+  .preview-table td.pass{color:var(--teal);font-weight:500;}
+
+  .api-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+
+  .edu-item{margin-bottom:16px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-item .role{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;color:var(--paper);}
+  .edu-item .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber-dim);margin-top:3px;}
+
+  footer{padding:64px 0 80px;text-align:center;border-top:1px solid var(--line);}
+  footer .prompt{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--amber);margin-bottom:16px;}
+  footer .contact-row{display:flex;justify-content:center;gap:18px;font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+  footer .contact-row a{color:var(--paper-dim);text-decoration:none;}
+  footer .contact-row a:hover{color:var(--amber);}
+
+  /* ---- Scroll animation ---- */
+  .fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease, transform 0.6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+
+  /* ---- Hero entrance (staggered on load) ---- */
+  @keyframes heroIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .hero-el{opacity:0;animation:heroIn 0.7s ease forwards;}
+  .hero-el:nth-child(1){animation-delay:0.05s;}
+  .hero-el:nth-child(2){animation-delay:0.18s;}
+  .sidebar .hero-el{animation-delay:0s;}
+  .sb-name.hero-el{animation-delay:0.05s;}
+  .sb-role.hero-el{animation-delay:0.15s;}
+  .sb-status.hero-el{animation-delay:0.25s;}
+
+  /* ---- Mobile: sidebar becomes top bar ---- */
+  @media (max-width:900px){
+    :root{--sidebar-w:0px;}
+    .sidebar{
+      position:fixed;top:0;left:0;width:100%;height:auto;
+      flex-direction:row;align-items:center;padding:14px 18px;
+      overflow-x:auto;gap:16px;
+    }
+    .sb-name{font-size:16px;white-space:nowrap;}
+    .sb-role{display:none;}
+    .sb-status{margin-top:0;white-space:nowrap;}
+    .sb-links{display:flex;margin-top:0;flex:none;gap:4px;}
+    .sb-links li{margin-bottom:0;}
+    .sb-links a{white-space:nowrap;padding:6px 10px;border-left:none;border-bottom:2px solid transparent;}
+    .sb-links a.active{border-left-color:transparent;border-bottom-color:var(--amber);}
+    .sb-foot{display:none;}
+    .content{margin-left:0;margin-top:64px;}
+    h1{font-size:34px;}
+    .stats-bar{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="sb-name hero-el">Laiba Zaheer</div>
+    <div class="sb-role hero-el">SQA & API Testing</div>
+    <div class="sb-status hero-el"><span class="dot"></span>OPEN TO ROLES</div>
+    <ul class="sb-links">
+      <li><a href="#intro" class="nav-link active" data-sec="intro">Intro</a></li>
+      <li><a href="#proof" class="nav-link" data-sec="proof">Proof</a></li>
+      <li><a href="#bug" class="nav-link" data-sec="bug">Debugging</a></li>
+      <li><a href="#manual" class="nav-link" data-sec="manual">Manual TCs</a></li>
+      <li><a href="#apis" class="nav-link" data-sec="apis">APIs</a></li>
+      <li><a href="#background" class="nav-link" data-sec="background">Background</a></li>
+      <li><a href="#contact" class="nav-link" data-sec="contact">Contact</a></li>
+    </ul>
+    <div class="sb-foot">
+      <a class="sb-cta" href="mailto:laibazaheer111@gmail.com">Get in touch</a>
+      <a class="sb-cta sb-cta-outline" href="Laiba_Zaheer_Resume_Public.pdf" download>⬇ Download Resume</a>
+      <div class="sb-links2">
+        <a href="mailto:laibazaheer111@gmail.com">✉ Email</a>
+        <a href="https://linkedin.com/in/laiba-zaheer-sqa" target="_blank" rel="noopener">in LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="wrap">
+
+      <header id="intro">
+        <h1 class="hero-el">Laiba Zaheer</h1>
+        <div class="tagline hero-el">SQA & <span>API Testing</span> · Postman · SQL & Data Validation · Karachi, Pakistan</div>
+      </header>
+
+      <section id="intro2" class="fade-in">
+        <p class="lead">Final-year student (6th Semester, IT/Computer Science), self-taught in API testing and SQL. Real Postman test scripts below — status codes, headers, cookies, response time, data validation, and request chaining.</p>
+        <div class="chip-row">
+          <span class="chip accent">API Testing</span>
+          <span class="chip accent">Postman</span>
+          <span class="chip accent">SQL</span>
+          <span class="chip">Test Case Design</span>
+          <span class="chip">Bug Reporting</span>
+          <span class="chip">SDLC / STLC</span>
+          <span class="chip">Bearer Token Auth</span>
+        </div>
+      </section>
+
+      <section id="proof" class="fade-in">
+        <div class="eyebrow">Proof · Real Test Scripts</div>
+        <h2>What I've actually written</h2>
+        <p class="lead">Every snippet below is copied directly from my own Postman collections.</p>
+
+        <div class="stats-bar">
+          <div class="stat"><div class="num" data-count="19">0</div><div class="label">Test Cases</div></div>
+          <div class="stat"><div class="num" data-count="7">0</div><div class="label">APIs Tested</div></div>
+          <div class="stat"><div class="num" data-count="6" data-suffix="+">0</div><div class="label">Assertion Types</div></div>
+          <div class="stat"><div class="num" data-count="3">0</div><div class="label">Public / Local / Mock</div></div>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-card">
+            <div class="proof-head">✓ Status Code <span class="badge">multi-outcome</span></div>
+            <div class="proof-code">pm.test(<span class="str">"Pass if 200 or 400"</span>, () => {
+  pm.expect(pm.response.code)
+    .to.be.<span class="fn">oneOf</span>([<span class="kw">400</span>, <span class="kw">200</span>]);
+});</div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-head">🍪 Cookie Check<span class="status-pill">TESTED</span></div>
+            <div class="proof-code">pm.test(<span class="str">"cookie 'language' present"</span>, () => {
+  pm.expect(pm.cookies.has(<span class="str">"language"</span>))
+    .to.be.<span class="kw">true</span>;
+});</div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-head">⏱ Response Time<span class="status-pill">TESTED</span></div>
+            <div class="proof-code">pm.test(<span class="str">"response time < 1000ms"</span>, () => {
+  pm.expect(pm.responseTime)
+    .<span class="fn">below</span>(<span class="kw">1000</span>);
+});</div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-head">📦 Data Type Validation<span class="status-pill">TESTED</span></div>
+            <div class="proof-code">pm.test(<span class="str">"response shape"</span>, () => {
+  pm.expect(jsonData).to.be.<span class="fn">an</span>(<span class="str">"array"</span>);
+  pm.expect(jsonData[0].rollNo)
+    .to.be.<span class="fn">a</span>(<span class="str">"string"</span>);
+});</div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-head">🔗 Request Chaining<span class="status-pill">TESTED</span></div>
+            <div class="proof-code"><span class="kw">let</span> data = pm.response.json();
+pm.globals.<span class="fn">set</span>(<span class="str">"userid_A"</span>, data.id);
+pm.globals.<span class="fn">set</span>(<span class="str">"email_env"</span>, data.email);</div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-head">📋 Header Validation<span class="status-pill">TESTED</span></div>
+            <div class="proof-code">pm.test(<span class="str">"content-type is json"</span>, () => {
+  pm.expect(pm.response.headers
+    .<span class="fn">get</span>(<span class="str">"Content-Type"</span>))
+    .to.<span class="fn">include</span>(<span class="str">"application/json"</span>);
+});</div>
+          </div>
+        </div>
+
+        <table class="preview-table">
+          <thead>
+            <tr><th>API</th><th>Endpoint</th><th>Method</th><th>Test Type</th><th>Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>GoRest</td><td>/users</td><td>POST</td><td>Dynamic Data + Chaining</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Simple Books API</td><td>/orders/{id}</td><td>GET</td><td>Data Match</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Local Test Server</td><td>/</td><td>GET</td><td>Cookie Validation</td><td class="pass">✓ Pass</td></tr>
+            <tr><td>Postman Echo</td><td>/post</td><td>POST</td><td>Multi-outcome Status</td><td class="pass">✓ Pass</td></tr>
+          </tbody>
+        </table>
+
+        <a class="sheet-cta" href="https://docs.google.com/spreadsheets/d/1UCDwarMBvAplruKf-8jKzLDiJKjsfbut2oPaq6VgAAg/edit?usp=sharing" target="_blank" rel="noopener">📊 View all 19 test cases (Google Sheet)</a>
+      </section>
+
+      <section id="bug" class="fade-in">
+        <div class="eyebrow">Debugging · Real Example</div>
+        <h2 style="font-size:19px;">A bug I found in my own test script</h2>
+        <p class="lead">Not a hypothetical — this is something I actually got wrong, caught, and fixed.</p>
+        <div class="proof-card" style="margin-top:16px;">
+          <div class="proof-head">🐞 Array-Indexing Bug <span class="badge">self-caught</span></div>
+          <div class="proof-code"><span class="str">// Before — treats a single-object response like an array</span>
+pm.expect(data[<span class="kw">0</span>].id).to.eql(pm.globals.get(<span class="str">"userid_A"</span>));
+<span class="str">// GET /users/{id} returns ONE object, not an array — data[0] was undefined</span>
+
+<span class="str">// After — fixed</span>
+pm.expect(data.id).to.eql(pm.globals.get(<span class="str">"userid_A"</span>));</div>
+        </div>
+        <p class="lead" style="margin-top:14px;font-size:13px;">Caught while testing GoRest and Simple Books API single-resource endpoints — a good reminder to check response shape before writing assertions.</p>
+      </section>
+
+      <section id="manual" class="fade-in">
+        <div class="eyebrow">Manual Testing · Test Case Design</div>
+        <h2 style="font-size:19px;">Login form — test cases</h2>
+        <p class="lead">Written and refined through practice — covering functional, negative, and boundary cases.</p>
+        <table class="preview-table" style="margin-top:16px;">
+          <thead>
+            <tr><th>Test Case</th><th>Type</th><th>Input</th><th>Expected Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>TC01</td><td>Positive</td><td>Valid email + password</td><td>Redirect to dashboard</td></tr>
+            <tr><td>TC02</td><td>Negative</td><td>Empty email + password</td><td>"Fields cannot be empty" error</td></tr>
+            <tr><td>TC03</td><td>Negative</td><td>Invalid email format</td><td>"Invalid email" error</td></tr>
+            <tr><td>TC04</td><td>Boundary</td><td>Password at max length limit</td><td>Accepted, login succeeds</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="apis" class="fade-in">
+        <div class="eyebrow">APIs Tested</div>
+        <h2>Across public & local environments</h2>
+        <div class="api-row">
+          <span class="chip">GoRest</span>
+          <span class="chip">Simple Books API</span>
+          <span class="chip">DummyJSON</span>
+          <span class="chip">JSONPlaceholder</span>
+          <span class="chip">Postman Echo</span>
+          <span class="chip">Local Node.js Server</span>
+          <span class="chip">Postman Mock Server</span>
+        </div>
+      </section>
+
+      <section id="background" class="fade-in">
+        <div class="eyebrow">Background</div>
+        <h2 style="font-size:19px;margin-bottom:18px;">Education & Certifications</h2>
+
+        <div class="edu-item">
+          <div class="role">BS Digital Systems & Web Technology — Hamdard University, Karachi</div>
+          <div class="meta">2023 – 2027 (Expected) · Final Year — 6th Semester · CGPA 3.33/4.0</div>
+        </div>
+        <div class="edu-item">
+          <div class="role">Intermediate (Computer Science) — Sir Syed Govt. Girls College, Karachi</div>
+          <div class="meta">2020 – 2022</div>
+        </div>
+
+        <div class="chip-row" style="margin-top:20px;">
+          <span class="chip">SQL Foundations — Microsoft</span>
+          <span class="chip">Technical Support Fundamentals — Google</span>
+          <span class="chip">Introduction to Generative AI — Google</span>
+          <span class="chip">AI Fundamentals — DataCamp</span>
+          <span class="chip">Business Analysis & Process Management — Coursera</span>
+        </div>
+      </section>
+
+      <footer id="contact">
+        <div class="prompt">laiba@qa:~$ contact --hire-me</div>
+        <div class="contact-row">
+          <a href="mailto:laibazaheer111@gmail.com">laibazaheer111@gmail.com</a>
+          <a href="https://linkedin.com/in/laiba-zaheer-sqa" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+<script>
+  // Scroll-triggered fade-ins
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObserver.observe(el));
+
+  // Active sidebar link on scroll — position-based scrollspy (reliable even for short sections)
+  const allSections = Array.from(document.querySelectorAll('section[id], header[id], footer[id]'));
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function idToNavId(id) {
+    if (id === 'intro2') return 'intro';
+    return id;
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY + window.innerHeight * 0.35;
+    const lastSection = allSections[allSections.length - 1];
+    const mainSections = allSections.slice(0, -1);
+    const atTrueBottom = (window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 15);
+
+    let current = mainSections[0];
+    for (const sec of mainSections) {
+      if (sec.offsetTop <= scrollPos) {
+        current = sec;
+      }
+    }
+    if (atTrueBottom) {
+      current = lastSection;
+    }
+    const targetId = idToNavId(current.getAttribute('id'));
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('data-sec') === targetId);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  window.addEventListener('load', updateActiveLink);
+  updateActiveLink();
+
+  // Animated counters - count up when stats bar enters view
+  const counters = document.querySelectorAll('.num[data-count]');
+  let countersRun = false;
+  function runCounters() {
+    if (countersRun) return;
+    countersRun = true;
+    counters.forEach(el => {
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 900;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + (progress === 1 ? suffix : '');
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+  const statsBarEl = document.querySelector('.stats-bar');
+  if (statsBarEl) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) runCounters(); });
+    }, { threshold: 0.4 });
+    counterObserver.observe(statsBarEl);
+  }
+
+</script>
+
+</body>
+</html>
